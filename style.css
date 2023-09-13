@@ -1,0 +1,874 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'spotify-circular', 'Circular', Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/***** Navigation Styles *****/
+
+header{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+    background: #000;
+    padding: 1.2rem 0;
+}
+
+.logo-img{
+    width: 32%;
+    cursor: pointer;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.nav-items{
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list{
+    list-style: none;
+    position: relative;
+}
+
+.nav-links{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family:  Helvetica, sans-serif;
+}
+
+.nav-list:nth-child(3){
+    margin-right: 3rem;
+}
+
+.nav-list:nth-child(3):after{
+    content: '';
+    position: absolute;
+    left: 150%;
+    top: 0px;
+    height: 18px;
+    width: 1px;
+    display: block;
+    background-color: #fff;
+}
+
+.nav-links:hover{
+    color: #1ed760
+}
+
+.sign-up-btn{
+    margin-right: 2rem;
+    border: none;
+    background-color: #000;
+    color: #d9dadc;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sign-up-btn:hover,
+.login-btn:hover{
+    color: #1ed760;
+}
+
+.login-btn{
+    border: none;
+    background-color: #000;
+    color: #d9dadc;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bars{
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/***** Hero Styles *****/
+
+.hero-container{
+    background: #1d75de;
+    height: 23rem;
+    padding: 5rem 7rem;
+}
+
+.heading{
+    font-size: 2.2rem;
+    color: #fff;
+    font-family:    Helvetica, sans-serif sans-serif;
+    margin-bottom: 2rem;
+}
+
+.details{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: Helvetica, sans-serif sans-serif;
+    margin-bottom: 2rem;
+}
+
+.buttons{
+    display: flex;
+}
+
+.hero-buttons{
+    display: flex;
+}
+
+.hero-buttons{
+    margin-top: 0.9rem;
+}
+
+.get-btn{
+    padding: 1.1rem 2rem;
+    background: #191414;
+    border: none;
+    color: #fff;
+    border-radius: 80px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.view-btn{
+    padding: 1rem 2rem;
+    background: #1d75de;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 0.2rem;
+}
+
+.get-btn:hover,
+.view-btn:hover{
+    transform: scale(1.04);
+}
+
+.more-info{
+    padding-top: 2.5rem;
+}
+
+.more-info a,
+span{
+    color: #fff;
+    font-size: 0.7rem;
+}
+
+/**** Music Selection Styles ****/
+
+.music-container{
+    text-align: center;
+    padding: 4.5rem 0 6rem  0;
+}
+
+.music-info{
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.musics-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 5rem;
+    padding: 0 5rem;
+}
+
+.musics img{
+    width: 50%;
+}
+
+.musics h3{
+    margin-top: 3rem;
+}
+
+.musics p{
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+/**** Music Subscription Box Styles  ****/
+
+.sub-container{
+    background: #efefef;
+    padding:  6rem;
+}
+
+.music-choice-heading{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.choice-info-detail{
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color:#1c1d1d;
+}
+
+.box-container{
+    display: flex;
+    gap: 20px;
+    margin: 1.5rem 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.musics-box{
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    width: 100%;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.subscription-month{
+    background-color: #0d72ea;
+    color: #fff;
+    font-size: 0.88rem;
+    padding: 0.3rem 0.4rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.subscription-info{
+    color: #0d72ea;
+    border: 1px solid;
+    max-width: 170px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.subscription h3,
+.subscription-2 h3{
+    background: #0d72ea;
+    color: #fff;
+    max-width: 100px;
+    font-size: 0.90rem;
+    padding: 0.3rem 0.4rem;
+    border-radius: 5px;
+}
+
+.subscription-2 h2{
+    margin-top: 0.5rem;
+}
+
+.subscription-details{
+    margin-bottom: 1.5rem;
+}
+
+.subscription-details-2{
+    margin-bottom: 3.8rem;
+}
+
+.subscription-details p,
+.subscription-details-2 p{
+    margin-top: 0.2rem;
+    line-height: 1.3;
+}
+
+.subscription-details h4,
+.subscription-details-2 h4{
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+.music-details{
+    border-top: 1px solid;
+    list-style: none;
+}
+
+.music-list,
+.music-list-2{
+    margin-top: 1.5rem;
+}
+
+.music-list li,
+.music-list-2 li{
+    color:#1c1d1d;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.checked{
+    width: 20px;
+    margin-right: 0.9rem;
+}
+
+.get-btn-2{
+    border: none;
+    background: #000;
+    color: #fff;
+    padding: 1rem 4rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 4rem 0;
+    cursor: pointer;
+}
+
+.btn{
+    margin-bottom: 1rem;
+    margin-top: 5.5rem;
+}
+
+.btn-2{
+    margin-top: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-3{
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.btn-4{
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.terms a{
+    color: #535353;
+    font-size: 0.7rem;
+}
+
+.terms p{
+    font-size: 0.74rem;
+    color: #535353;
+    line-height: 1.3;
+}
+
+.get-btn-2:hover{
+    transform: scale(1.05);
+}
+
+/***** Footer Styles *****/
+
+.footer-container{
+    padding: 6rem 4rem 4rem 6rem;
+    background: #000;
+    color: #fff;
+}
+
+.footer-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo{
+    margin-right: 8rem;
+    margin-top: -1rem;
+}
+
+.footer-logo img{
+    width: 32%;
+    cursor: pointer;
+}
+
+.footer-links{
+    display: flex;
+    text-align: left;
+    gap: 80px;
+    margin-left: -50%;
+}
+
+.links{
+    margin-bottom: 2rem;
+}
+
+.label{
+    color: #919496;
+    font-size: 0.9rem;
+    letter-spacing: 0.9px;
+    margin-bottom: 2rem;
+}
+
+.links p{
+    text-align: start;
+    font-size: 0.95rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+
+.links p:hover{
+    color: #1ed760;
+}
+
+.social-media{
+    margin-right: 3rem;
+}
+
+.social-media img{
+    cursor: pointer;
+    padding: 0.5rem ;
+}
+
+.social-media img:hover{
+    transform: scale(1.1);
+}
+
+.location-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.bottom-links a{
+    color: #919496;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.bottom-links a:hover{
+    color: #1ed760;
+}
+
+.country{
+    margin-top: -2rem;
+}
+
+.country p{
+    color: #919496;
+    text-align: end;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.country p:hover{
+    color: #1ed760;
+}
+
+.country a{
+    color: #919496;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+@media only screen and (max-width:1024px){
+    /***** Header Styles *****/
+
+    header{
+        padding: 1rem 3rem;
+    }
+
+    /**** Musics Selection Section ****/
+
+    .music-container{
+        padding: 4rem 0 8rem 0;
+    }
+
+    .musics-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .musics{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .musics > div {
+        margin-top: -4rem;
+        text-align: start;
+    }
+
+    .musics h3{
+        font-size: 1.3rem;
+    }
+
+    .musics img{
+        width: 25%;
+    }
+
+    /**** Music  Subscription Box Selection  ****/
+
+    .box-container{
+        flex-direction: column;
+        width: 60%;
+        margin: auto;
+    }
+    
+    .get-btn-2{
+        width: 100%;
+    }
+
+    .subscription-details{
+        margin-bottom: 1.5rem;
+    }
+    
+    .subscription-details-2{
+        margin-bottom: 1.5rem;
+    }
+
+    .subscription-month{
+        width: 60%;
+    }
+
+   .get-btn-2{
+      margin: 1rem 0;
+   }
+}
+
+
+@media only screen and (max-width: 768px){
+    .no-scroll {
+        overflow: hidden;
+    }
+   
+    /**** Navigation Styles ****/
+    header{
+        padding: 1rem;
+    }
+
+    .logo-img{
+        width: 40%;
+        margin-left: -1rem;
+    }
+
+    .nav-items{
+        position: fixed;
+        flex-direction: column;
+        padding: 1.5rem;
+        top: 0;
+        left: 100%;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-items.active{
+        left: 0;
+    }
+
+    .nav-list:nth-child(3):after{
+        content: '';
+        position: absolute;
+        left: 5%;
+        top: 70px;
+        transform: rotate(90deg);
+        height: 20px;
+        width: 2px;
+        display: block;
+        background-color: #fff;
+    }
+
+    .nav-links{
+        font-size: 1.5rem;
+    }
+
+    .hamburger{
+        display: block;
+        margin-left: 8rem;
+        z-index: 1;
+    }
+
+    .hamburger.active .bars:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bars:nth-child(1){
+        transform: translateY(8px) rotate(-315deg);
+    }
+
+    .hamburger.active .bars:nth-child(3){
+        transform: translateY(-8px) rotate(-225deg);
+    }
+   
+    /**** Hero Section  Styles ****/
+
+    .hero-container{
+        padding: 2rem 4rem;
+        height: 22rem;
+    }
+
+    .heading{
+        margin-top: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .details{
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .buttons{
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
+        margin-top: 4rem;
+    }
+
+    .sign-up-btn,
+    .login-btn{
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .hero-buttons{
+       gap: 1rem;
+    }
+
+    .get-btn{
+        width: 85%;
+    }
+
+    .view-btn{
+        width: 85%;
+    }
+
+    .more-info{
+        padding: 1rem 0;
+        margin-top: 1rem;
+    }
+
+    /**** Musics Selection Section Style ****/
+    .music-container{
+        padding-bottom: 5rem;
+    }
+
+    .musics-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-left: -2rem;
+    }
+
+    .musics{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 2.5rem 0;
+    }
+
+    .musics > div {
+        margin-top: -2rem;
+        text-align: start;
+    }
+
+    .musics h3{
+        font-size: 1.0rem;
+    }
+
+    .musics img{
+        width: 35%;
+    }
+
+
+    /**** Music  Subscription Box Selection ****/
+
+    .sub-container{
+        padding: 2rem 1rem 2rem 0;
+    }
+
+    .music-choice-heading{
+        font-size: 1.8rem;
+    }
+
+    .choice-info-detail{
+        line-height: 1.4;
+    }
+
+    .box-container{
+        flex-direction: column;
+        width: 60%;
+    }
+
+    .btn{
+        margin: 1rem 0;
+    }
+
+    .btn-2{
+        margin: 1rem 0;
+    }
+
+    .btn-4{
+        margin-top: 1rem;
+    }
+
+    .get-btn-2{
+        width: 100%;
+    }
+
+    .subscription-month{
+        width: 60%;
+    }
+
+   .subscription-details-2{
+        margin-bottom: 1rem;
+   }
+
+   /**** Footer Styles ****/
+   
+   .footer-container{
+    padding: 3.5rem 5.5rem;
+   }
+   
+   .footer-items{
+       flex-direction: column;
+   }
+
+   .footer-logo{
+        margin-left: -4rem;
+        margin-bottom: 4rem;
+   }
+
+   .footer-logo img{
+        width: 30%;
+   }
+
+   .footer-links{
+        flex-direction: column;
+        margin-left: -4rem;
+        gap: 0;
+   }
+
+   .social-media{
+        margin-left: -4.5rem;
+        margin-top: 4rem;
+   }
+
+   .location-links{   
+        margin-left: -4.5rem;
+        margin-top: 2rem;
+   }
+
+    .country{
+        margin-right: -4.5rem;
+    }
+    
+    .country p{
+        font-size: 0.7rem;
+        margin-right: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    /* Header Styles */
+
+    .logo-img{
+        width: 60%;
+        margin-left: 1rem;
+    }
+
+    /* Hero Section Styles */
+
+    .hero-container{
+        padding: 1.1rem;
+        height: 23.5rem;
+    }
+
+    .heading{
+        font-size: 1.7rem;
+    }
+
+    .details{
+        font-size: 1rem;
+        padding: 0;
+        margin-left: 1rem;
+    }
+
+    .hero-buttons{
+        flex-direction: column;
+    }
+
+    .get-btn,
+    .view-btn{
+        width: 100%;
+    }
+
+    .more-info{
+        margin-top: 0;
+    }
+
+    /* Music Selection Styles Styles */
+
+    .music-container{
+        padding: 1rem;
+    }
+
+    .musics-grid{
+        grid-template-columns: 1fr; 
+        padding: 0 2rem;
+    }
+
+    .musics{
+        margin-left: 1rem;
+        margin-top: -2rem;
+        gap: 1rem;
+    }
+
+    .musics img{
+        width: 33%;
+    }
+
+    .musics > div{
+        margin-top: -3rem;
+    }
+
+    /* Music  Subscription Box Selection Styles */
+
+    .box-container{
+        width: 100%;
+    }
+
+    .subscription-month{
+        width: 80%;
+    }
+
+    /* Footer Styles  */
+
+    .footer-logo img{
+        width: 50%;
+    }
+
+    .location-links{
+       gap: 4rem;
+    }
+
+    .social-media{
+        margin-top: 0;
+    }
+}
